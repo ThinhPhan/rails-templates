@@ -8,7 +8,7 @@ APP_NAME = app_name
 APP_NAME_HUMANIZED = app_name.split(/[-_]/).map(&:capitalize).join(' ').gsub(/ Web$/, '')
 DOCKER_REGISTRY_HOST = 'docker.io'
 DOCKER_IMAGE = "nimblehq/#{APP_NAME}".freeze
-RUBY_VERSION = '3.0.1'
+RUBY_VERSION = '3.1.1'
 POSTGRES_VERSION = '12.1'
 REDIS_VERSION = '5.0.7'
 # Variants
@@ -21,7 +21,7 @@ DEFAULT_ADDONS = {
 }.freeze
 
 if WEB_VARIANT
-  NODE_VERSION = '16.13.2'
+  NODE_VERSION = '16.14.2'
   NODE_SOURCE_VERSION = '16' # Used in Dockerfile https://github.com/nodesource/distributions
 end
 
@@ -115,7 +115,7 @@ def delete_test_folder
 end
 
 def install_addon_prompt(addon)
-  "Would you like to add the #{addon} addon? [Yn]"
+  "Would you like to add the #{addon} addon? [yN]"
 end
 
 def post_default_addons_install
